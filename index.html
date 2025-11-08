@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Elon Musk Space Exploration</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: #0b0c10;
+    color: #c5c6c7;
+  }
+  header {
+    background: linear-gradient(90deg, #1f2833, #45a29e);
+    padding: 2rem;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #66fcf1;
+    animation: glow 2.5s infinite alternate;
+  }
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 5px #66fcf1, 0 0 10px #45a29e;
+    }
+    to {
+      text-shadow: 0 0 20px #66fcf1, 0 0 30px #45a29e;
+    }
+  }
+  nav {
+    margin-top: 1rem;
+  }
+  nav a {
+    text-decoration: none;
+    color: #66fcf1;
+    margin: 0 1rem;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+    overflow: hidden;
+    display: inline-block;
+  }
+  nav a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #66fcf1;
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  nav a:hover {
+    color: #45a29e;
+    transform: scale(1.1);
+  }
+  nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  .hero {
+    position: relative;
+    background: url('https://cdn.spacex.com/media/falcon9_launch_2021.jpg') no-repeat center center/cover;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #66fcf1;
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px #000;
+    animation: heroFadeIn 3s ease forwards;
+  }
+  @keyframes heroFadeIn {
+    from {opacity: 0; transform: translateY(-50px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+  main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  section {
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(40px);
+    animation-fill-mode: forwards;
+  }
+  section.visible {
+    animation: fadeSlideUp 1s ease forwards;
+  }
+  section:nth-child(2) { animation-delay: 0.3s; }
+  section:nth-child(3) { animation-delay: 0.6s; }
+  section:nth-child(4) { animation-delay: 0.9s; }
+  section:nth-child(5) { animation-delay: 1.2s; }
+  @keyframes fadeSlideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  h2 {
+    color: #45a29e;
+    border-bottom: 2px solid #66fcf1;
+    padding-bottom: 0.5rem;
+  }
+  /* Image hover zoom effect */
+  .gallery-img {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+    border-radius: 8px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+  }
+  .gallery-img:hover {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 8px 20px rgba(102,252,241, 0.6);
+  }
+  /* Button with hover animation */
+  .btn {
+    display: inline-block;
+    background-color: #45a29e;
+    color: #0b0c10;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.4s ease, transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(69,162,158, 0.4);
+  }
+  .btn:hover {
+    background-color: #66fcf1;
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102,252,241, 0.7);
+  }
+  /* Form input styling */
+  input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+  }
+  /* Scroll arrow bounce */
+  .scroll-arrow {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: #66fcf1;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, -20px); }
+  }
+  footer {
+    background: #1f2833;
+    color: #66fcf1;
+    text-align: center;
+    padding: 1rem;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Elon Musk Space Exploration</h1>
+    <nav>
+      <a href="#about">About Elon Musk</a>
+      <a href="#projects">SpaceX Projects</a>
+      <a href="#news">Latest News</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    Reaching for the Stars with Elon Musk's Vision
+    <div class="scroll-arrow" title="Scroll Down">&#8595;</div>
+  </div>
+
+  <main>
+    <section id="about" class="section">
+      <h2>About Elon Musk</h2>
+      <p>Elon Musk is a visionary entrepreneur known for his groundbreaking work in electric vehicles, space exploration, and renewable energy. He founded SpaceX in 2002 with the goal of reducing space transportation costs and enabling the colonization of Mars.</p>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>SpaceX Projects</h2>
+      <p>SpaceX has revolutionized space travel with innovations such as the Falcon 9 reusable rocket, the Falcon Heavy heavy-lift vehicle, the Dragon spacecraft, and the ambitious Starship project aimed at Mars colonization.</p>
+    </section>
+
+    <section id="news" class="section">
+      <h2>Latest News & Updates</h2>
+      <p>Stay updated with the latest launches, missions, and developments from SpaceX and Elon Musk's space ventures.</p>
+      <button class="btn">Read More</button>
+    </section>
+
+    <section id="gallery" class="section">
+      <h2>Gallery</h2>
+      <div style="display:flex; flex-wrap: wrap; justify-content: center;">
+        <img class="gallery-img" src="https://cdn.spacex.com/media/dragon_capsule_2021.jpg" alt="Dragon Capsule" />
+        <img class="gallery-img" src="https://cdn.spacex.com/media/starship_2021.jpg" alt="Starship" />
+        <img class="gallery-img" src="https://cdn.spacex.com/media/falcon_heavy_2021.jpg" alt="Falcon Heavy" />
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact & Connect</h2>
+      <p>For inquiries or collaborations, reach out via social media or contact form.</p>
+      <form style="max-width: 400px; margin: auto;">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Message" required rows="5"></textarea>
+        <button type="submit" class="btn" style="margin-top: 10px;">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Elon Musk Space Exploration. All rights reserved.
+  </footer>
+
+  <script>
+    // Reveal sections on scroll
+    const sections = document.querySelectorAll('section');
+    function revealSections() {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        if(top < triggerBottom) {
+          section.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealSections);
+    revealSections();
+
+    // Scroll arrow click scrolls down smoothly
+    document.querySelector('.scroll-arrow').addEventListener('click', () => {
+      window.scrollBy({top: window.innerHeight, behavior: 'smooth'});
+    });
+  </script>
+</body>
+</html>
